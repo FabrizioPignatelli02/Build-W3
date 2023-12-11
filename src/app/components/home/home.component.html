@@ -8,19 +8,22 @@
           <p class="card-text">
             {{ post.body }}
           </p>
-          <a
-            [routerLink]="['/detail/' + post.id]"
-            routerLinkActive="active"
-            class="btn btn-outline-primary"
-            >View</a
-          >
-          <a
-            [routerLink]="['/edit/' + post.id]"
-            routerLinkActive="active"
-            class="btn btn-outline-success ms-2"
-            >Edit</a
-          >
-          <a href="#" class="btn btn-outline-danger ms-2">Delete</a>
+          <!-- temporary ngIf condition until there will be logged-in user information -->
+          <div *ngIf="post.id % 2 === 1">
+            <a
+              [routerLink]="['/detail/' + post.id]"
+              routerLinkActive="active"
+              class="btn btn-outline-primary"
+              >View</a
+            >
+            <a
+              [routerLink]="['/edit/' + post.id]"
+              routerLinkActive="active"
+              class="btn btn-outline-success ms-2"
+              >Edit</a
+            >
+            <a href="#" class="btn btn-outline-danger ms-2">Delete</a>
+          </div>
         </div>
       </div>
     </div>

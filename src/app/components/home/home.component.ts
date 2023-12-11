@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
       console.log('Result', this.elencoArticoli);
     });
   }
+
+  goToDetails(id: number) {
+    console.log('Ciao details');
+  }
 }
