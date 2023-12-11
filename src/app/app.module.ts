@@ -10,7 +10,14 @@ import { EditComponent } from './components/edit/edit.component';
 import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, DetailComponent, EditComponent, CreateComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    DetailComponent,
+    EditComponent,
+    CreateComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
