@@ -16,10 +16,9 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     if (this.route.snapshot.paramMap.get('id')) {
       this.id = +this.route.snapshot.paramMap.get('id')!;
+      this.srvPost.getPostById(this.id).subscribe((post) => (this.post = post));
     }
   }
 
-  onSubmit(forms: NgForm) {
-    this.srvPost.getPostById(this.id).subscribe((post) => (this.post = post));
-  }
+  onSubmit(forms: NgForm) {}
 }
