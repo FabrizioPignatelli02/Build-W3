@@ -10,5 +10,7 @@ export class CreateComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  onSubmit(forms: NgForm) {}
+  onSubmit(forms: NgForm) {
+    console.log('creazione');
+  }
 }
