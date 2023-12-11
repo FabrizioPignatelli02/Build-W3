@@ -9,13 +9,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
-  idpost: number = 0;
+  idPost!: number;
+  titlePost!: string;
+  bodyPost!: string;
   constructor(private route: ActivatedRoute, private srvPost: PostService) {}
 
   ngOnInit(): void {
     if (this.route.snapshot.paramMap.get('id')) {
-      this.idpost = +this.route.snapshot.paramMap.get('id')!;
-      console.log('id', this.idpost);
+      this.idPost = +this.route.snapshot.paramMap.get('id')!;
+      this.srvPost.getPostById(this.idPost).subscribe((result) => {
+        this.titlePost = result.title;
+        this.bodyPost = result.body;
+      });
     }
   }
 }
