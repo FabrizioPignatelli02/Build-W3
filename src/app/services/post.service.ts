@@ -8,6 +8,7 @@ import { Post } from '../models/post';
 })
 export class PostService {
   private readonly apiUrl = environment.apiURl;
+
   constructor(private http: HttpClient) {}
 
   getAllPosts() {
@@ -22,7 +23,7 @@ export class PostService {
     return this.http.get<Post[]>(`${this.apiUrl}?userId=${userId}`);
   }
 
-  createPost(post: Post) {
+  createPost(post: Partial<Post>) {
     return this.http.post(this.apiUrl, post);
   }
 
