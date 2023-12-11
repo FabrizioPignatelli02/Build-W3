@@ -26,6 +26,9 @@ export class PostService {
   createPost(post: Partial<Post>) {
     return this.http.post(this.apiUrl, post);
   }
+  updatePost(post: Partial<Post>) {
+    return this.http.put(this.apiUrl, put);
+  }
 
   deletePost(postId: number) {
     return this.http.delete(`${this.apiUrl}/${postId}`);
