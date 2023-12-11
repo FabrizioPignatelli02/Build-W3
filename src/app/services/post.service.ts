@@ -1,9 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { Post } from '../models/post';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
+  private readonly apiUrl = environment.apiURl;
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getAllPosts() {
+    return this.http.get<Post[]>(this.apiUrl);
+  }
+
+  getPostById(postId: number) {
+    return this.http.get<Post>(`${this.apiUrl}/${postId}`);
+  }
+
+  getPostsByUserId(userId: number) {
+    return this.http.get<Post[]>(`${this.apiUrl}?userId=${userId}`);
+  }
+
+  createPost(post: Post) {
+    return this.http.post(this.apiUrl, post);
+  }
+
+  deletePost(postId: number) {
+    return this.http.delete(`${this.apiUrl}/${postId}`);
+  }
 }
