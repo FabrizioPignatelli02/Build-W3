@@ -17,7 +17,6 @@ import { CreateComponent } from './components/create/create.component';
     NavbarComponent,
     HomeComponent,
     DetailComponent,
-
     EditComponent,
     CreateComponent,
   ],
