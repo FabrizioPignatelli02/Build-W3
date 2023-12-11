@@ -7,7 +7,12 @@
         <p class="card-text">
           {{ post.body }}
         </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a
+          [routerLink]="['/detail/' + post.id]"
+          routerLinkActive="active"
+          class="btn btn-primary"
+          >Dettaglio</a
+        >
       </div>
     </div>
   </div>
