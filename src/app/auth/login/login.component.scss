@@ -123,7 +123,7 @@ input {
   align-items: center;
 
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 4rem);
   background: #cec9a9;
   background-size: cover;
 
@@ -181,8 +181,8 @@ input {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
   &:hover {
-    color: $smoky-black;
-    background-color: $gray;
+    color: #c0bcb5;
+    background-color: #1a3439;
   }
 }
 
