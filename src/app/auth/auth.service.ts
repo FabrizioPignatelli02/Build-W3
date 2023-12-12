@@ -52,27 +52,9 @@ export class AuthService {
       })
     );
   }
-  // aggiornamento profilo utente
 
-  getUserInfo(): Auth | null {
-    return this.authSubj.getValue();
-  }
-  loadUserDetails(userId: number): Observable<any> {
-    const userDetailsUrl = `${this.apiURL}users/${userId}`;
-    return this.http.get(userDetailsUrl).pipe(catchError(this.errors));
-  }
-  updateUserInfo(updatedInfo: any): Observable<any> {
-    const userId = this.user?.user?.id; // Assicurati di gestire la possibilità che user o user.user possano essere null o undefined
-    console.log('User:', this.user);
-    console.log('User ID:', userId);
-
-    if (!userId) {
-      return throwError('User ID not available');
-    }
-
-    const updateUrl = `${this.apiURL}users/${userId}`;
-
-    return this.http.patch(updateUrl, updatedInfo).pipe(
+  updateUserInfo(updatedInfo: any, id: number) {
+    return this.http.put(`${this.apiURL}users/${id}`, updatedInfo).pipe(
       tap(() => {
         // Aggiorna anche this.user se necessario
         this.user = { ...this.user, ...updatedInfo };
@@ -84,7 +66,7 @@ export class AuthService {
   logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
   private errors(err: any) {

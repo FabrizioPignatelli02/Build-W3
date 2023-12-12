@@ -1,9 +1,9 @@
 {
   "users": [
     {
+      "name": "mirko",
       "email": "lucafavaretto@icolud.com",
-      "password": "$2a$10$Yn/SJDOMGDvCMjTYvaxz4.slL7Zb7IlGrnQouqHl/Pgs4pFLwv7z6",
-      "name": "Luca",
+      "password": "$2a$10$KIIOH4rctOkzhQg9HDHZO.WwD5R11GWziCiVLcsGlhb.GeKBwVcIq",
       "id": 1
     },
     {

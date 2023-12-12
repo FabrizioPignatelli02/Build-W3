@@ -20,6 +20,15 @@ export class PostService {
     }
     return 0;
   }
+  getUser() {
+    const user = localStorage.getItem('user');
+    if (user) {
+      const userData: Auth = JSON.parse(user);
+      return userData.user;
+    }
+    return 0;
+  }
+
   getAllPosts() {
     return this.http.get<Post[]>(this.apiUrl + 'posts');
   }

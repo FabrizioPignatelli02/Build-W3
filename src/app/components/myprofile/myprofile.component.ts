@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Auth } from 'src/app/auth/auth';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-myprofile',
@@ -10,9 +11,13 @@ import { Auth } from 'src/app/auth/auth';
 })
 export class MyProfileComponent implements OnInit {
   userForm!: FormGroup;
-  user: Auth | null = null;
+  user: any;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private postSrv: PostService
+  ) {}
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -25,24 +30,15 @@ export class MyProfileComponent implements OnInit {
   }
 
   private loadUserData() {
-    const user = this.authService.getUserInfo();
+    const user = this.postSrv.getUser();
 
-    if (user && user.user && user.user.id) {
-      this.authService.loadUserDetails(user.user.id).subscribe(
-        (userDetails) => {
-          this.user = user;
-          this.userForm.patchValue({
-            name: userDetails.name,
-            email: userDetails.email,
-            password: '',
-          });
-        },
-        (error) => {
-          console.error('Errore durante il caricamento dei dettagli :', error);
-        }
-      );
-    } else {
-      console.error("Errore: Impossibile ottenere l'ID dell'utente.");
+    if (user) {
+      this.user = user;
+      this.userForm.patchValue({
+        name: user.name,
+        email: user.email,
+        password: user.password,
+      });
     }
   }
 
@@ -50,7 +46,7 @@ export class MyProfileComponent implements OnInit {
     const formData = this.userForm.value;
 
     if (this.user) {
-      this.authService.updateUserInfo(formData).subscribe(
+      this.authService.updateUserInfo(formData, this.user.id).subscribe(
         () => {
           console.log('Informazioni utente aggiornate con successo!');
         },
