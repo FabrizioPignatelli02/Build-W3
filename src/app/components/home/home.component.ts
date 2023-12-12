@@ -12,12 +12,13 @@ export class HomeComponent implements OnInit {
   constructor(private postSrv: PostService) {}
 
   elencoArticoli: Post[] = [];
-  user!: Auth;
+  userId!: number;
 
   ngOnInit(): void {
     this.postSrv.getAllPosts().subscribe((result) => {
       this.elencoArticoli = result;
-      console.log('Result', this.elencoArticoli);
+      console.log('Result', this.elencoArticoli[0].userId);
+      this.userId = this.postSrv.getUserId();
     });
   }
 
