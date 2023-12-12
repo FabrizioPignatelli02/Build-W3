@@ -9,7 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 const routes: Routes = [
   {
     path: '',
-    component: SignupComponent,
+    component: HomeComponent,
   },
   {
     path: 'detail/:id',
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreateComponent,
+    component: SignupComponent,
   },
   {
     path: '**',
