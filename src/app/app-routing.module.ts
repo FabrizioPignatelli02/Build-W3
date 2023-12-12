@@ -4,11 +4,12 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { CreateComponent } from './components/create/create.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: SignupComponent,
   },
   {
     path: 'detail/:id',
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'edit/:id',
     component: EditComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: 'create',
