@@ -11,6 +11,12 @@
       "password": "$2a$10$MKqkXu1oR4yjvlK4XCFIiuDTfi9vYRd0r2pwavkGDtXteV/pJ4om6",
       "name": "Caterina",
       "id": 2
+    },
+    {
+      "email": "fabriziopignatelli26@gmail.com",
+      "password": "$2a$10$0yj5JiCKTgozJTru9/BLOehppj.EaLJwEw.UmXWAq7Fl/vg2Doufq",
+      "name": "Fabrizio Giuseppe Pignatelli",
+      "id": 3
     }
   ],
   "posts": [
