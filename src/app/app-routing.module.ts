@@ -6,7 +6,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { CreateComponent } from './components/create/create.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './auth/login/login.component';
-
+import { MyProfileComponent } from './components/myprofile/myprofile.component';
 const routes: Routes = [
   {
     path: '',
@@ -24,6 +24,11 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'myprofile',
+    component: MyProfileComponent,
     canActivate: [AuthGuard],
   },
   {

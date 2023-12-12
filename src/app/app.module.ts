@@ -13,6 +13,8 @@ import { EditComponent } from './components/edit/edit.component';
 import { CreateComponent } from './components/create/create.component';
 import { LoginComponent } from './auth/login/login.component';
 
+import { MyProfileComponent } from './components/myprofile/myprofile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { LoginComponent } from './auth/login/login.component';
     EditComponent,
     CreateComponent,
     LoginComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserModule,
