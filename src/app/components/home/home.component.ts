@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from 'src/app/models/post';
+import { Auth } from 'src/app/auth/auth';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +12,13 @@ export class HomeComponent implements OnInit {
   constructor(private postSrv: PostService) {}
 
   elencoArticoli: Post[] = [];
+  userId!: number;
 
   ngOnInit(): void {
     this.postSrv.getAllPosts().subscribe((result) => {
       this.elencoArticoli = result;
-      console.log('Result', this.elencoArticoli);
+      console.log('Result', this.elencoArticoli[0].userId);
+      this.userId = this.postSrv.getUserId();
     });
   }
 
