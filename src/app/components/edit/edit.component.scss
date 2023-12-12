@@ -17,4 +17,13 @@
     backdrop-filter: blur(15px);
     background-color: #7f7f7f10;
   }
+  .submit {
+    background-color: transparent;
+    border: solid 2px var(--colore-navbar);
+    color: var(--colore-navbar);
+  }
+  .submit:hover {
+    background-color: var(--colore-form);
+    color: white;
+  }
 }

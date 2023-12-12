@@ -21,4 +21,13 @@
     color: var(--colore-active);
     text-decoration: none;
   }
+  .submit {
+    background-color: transparent;
+    border: solid 2px var(--colore-navbar);
+    color: var(--colore-navbar);
+  }
+  .submit:hover {
+    background-color: var(--colore-form);
+    color: white;
+  }
 }
