@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from 'src/app/models/post';
+import { Auth } from 'src/app/auth/auth';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private postSrv: PostService) {}
 
   elencoArticoli: Post[] = [];
+  user!: Auth;
 
   ngOnInit(): void {
     this.postSrv.getAllPosts().subscribe((result) => {
