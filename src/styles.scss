@@ -1,13 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --colore-background: #151833;
-  --colore-testo: #c0bcb5;
   --colore-navbar: #4b7168;
   --colore-li-snavbar: #c0bcb5;
-  --colore-titol: #0f3033;
   --colore-button: #c2b999;
-  --colore-div: #270037;
-  --colore-acc1: #690031;
-  --colore-acc2: #864e00;
   --colore-active: #cec9a9;
+  --colore-delete: #914e4e;
+  --colore-view: #596057;
+  --colore-edit: #988b75;
+}
+/* Per i browser WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 5px; /* Larghezza della scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(
+    --colore-button
+  ); /* Colore della parte "thumb" (il pulsante trascinabile) */
+  border-radius: 10px; /* Bordo arrotondato della parte "thumb" */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(
+    --colore-active
+  ); /* Colore della parte "track" (la parte fissa) */
+}
+
+/* Per i browser Firefox */
+/* Nota: Al momento, Firefox non supporta la personalizzazione avanzata della scrollbar tramite CSS */
+/* Questo stile è un fallback generico */
+::-moz-scrollbar {
+  width: 5px;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: var(--colore-button);
+  border-radius: 10px;
+}
+
+::-moz-scrollbar-track {
+  background-color: var(--colore-background);
 }

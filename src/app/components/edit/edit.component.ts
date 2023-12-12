@@ -20,5 +20,7 @@ export class EditComponent implements OnInit {
     }
   }
 
-  onSubmit(forms: NgForm) {}
+  onSubmit(forms: NgForm) {
+    console.log(forms);
+  }
 }
