@@ -23,6 +23,12 @@
       "password": "$2a$10$KvDTRn7ifxsgEzJhGdyEv.onLiSKapIdXZi9ot7rYfjjun4pE9ET2",
       "name": "Chiara",
       "id": 4
+    },
+    {
+      "email": "gius@triolo.it",
+      "password": "$2a$10$9PWnz7yVZ9YExZq/VNDkluCNXgzzbw1ICOT3dovl2vPifaSXjMrN.",
+      "name": "Giuseppe",
+      "id": 5
     }
   ],
   "posts": [

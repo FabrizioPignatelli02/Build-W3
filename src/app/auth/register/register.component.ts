@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       ]),
     });
   }
-  onSubmit() {
+  signUp() {
     console.log(this.registerForm.value);
     try {
       this.authSrv.register(this.registerForm.value).subscribe();
