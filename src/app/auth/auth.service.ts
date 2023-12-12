@@ -4,7 +4,7 @@ import { Auth } from './auth';
 
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import { BehaviorSubject, throwError, tap, catchError } from 'rxjs'; // Il BehaviourSubject è un tipo particolare di Observable che richiede un valore iniziale, emette in tempo reale il cambiamento di valore e si desottoscrive DA SOLO immediatamente dopo - L'operatore tap è utilizzato per manipolare il PRIMO valore emesso da una chiamata HTTP
+import { BehaviorSubject, throwError, tap, catchError, Observable } from 'rxjs'; // Il BehaviourSubject è un tipo particolare di Observable che richiede un valore iniziale, emette in tempo reale il cambiamento di valore e si desottoscrive DA SOLO immediatamente dopo - L'operatore tap è utilizzato per manipolare il PRIMO valore emesso da una chiamata HTTP
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
@@ -52,11 +52,41 @@ export class AuthService {
       })
     );
   }
+  // aggiornamento profilo utente
+
+  getUserInfo(): Auth | null {
+    return this.authSubj.getValue();
+  }
+  loadUserDetails(userId: number): Observable<any> {
+    const userDetailsUrl = `${this.apiURL}users/${userId}`;
+    return this.http.get(userDetailsUrl).pipe(catchError(this.errors));
+  }
+  updateUserInfo(updatedInfo: any): Observable<any> {
+    const userId = this.user?.user?.id; // Assicurati di gestire la possibilità che user o user.user possano essere null o undefined
+    console.log('User:', this.user);
+    console.log('User ID:', userId);
+
+    if (!userId) {
+      return throwError('User ID not available');
+    }
+
+    const updateUrl = `${this.apiURL}users/${userId}`;
+
+    return this.http.patch(updateUrl, updatedInfo).pipe(
+      tap(() => {
+        // Aggiorna anche this.user se necessario
+        this.user = { ...this.user, ...updatedInfo };
+      }),
+      catchError(this.errors)
+    );
+  }
+
   logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
+
   private errors(err: any) {
     console.log(err);
     switch (err.error) {

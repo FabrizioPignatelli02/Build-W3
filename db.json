@@ -23,6 +23,12 @@
       "password": "$2a$10$KvDTRn7ifxsgEzJhGdyEv.onLiSKapIdXZi9ot7rYfjjun4pE9ET2",
       "name": "Chiara",
       "id": 4
+    },
+    {
+      "email": "asd@123.it",
+      "password": "$2a$10$RcZT4/rLUGIO8BD3.2yAmeBw6uKS9t47rKbKA.Hl7KbfgAwR.ksU2",
+      "name": "asd",
+      "id": 5
     }
   ],
   "posts": [
