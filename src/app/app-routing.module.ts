@@ -4,8 +4,9 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { CreateComponent } from './components/create/create.component';
-import { SignupComponent } from './components/signup/signup.component';
-
+import { AuthGuard } from './auth/auth.guard';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 const routes: Routes = [
   {
     path: '',
@@ -20,12 +21,17 @@ const routes: Routes = [
     component: EditComponent,
   },
   {
-    path: 'signup',
-    component: SignupComponent,
+    path: 'create',
+    component: CreateComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path: 'create',
-    component: SignupComponent,
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
     path: '**',
