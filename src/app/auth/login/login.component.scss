@@ -22,9 +22,9 @@ $bdrds: 3px;
 
 $white: #c0bcb5;
 $black: #4b7168;
-$gray: #ccc;
-$salmon: #e8716d;
-$smoky-black: rgba(#222222, 0.85);
+$gray: #4b7168;
+$salmon: #4b7168;
+$smoky-black: rgba(#4b7168, 0.85);
 
 $ff: "Montserrat", sans-serif;
 $ff-body: 12px;
@@ -32,9 +32,6 @@ $ff-light: 300;
 $ff-regular: 400;
 $ff-medium: 500;
 
-/**
-  * General configs
-  */
 * {
   box-sizing: border-box;
 }
@@ -127,7 +124,7 @@ input {
 
   width: 100%;
   height: 100vh;
-  background: #ccc;
+  background: #cec9a9;
   background-size: cover;
 
   &_options-container {
