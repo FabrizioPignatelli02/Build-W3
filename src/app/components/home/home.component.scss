@@ -2,4 +2,35 @@
   .main {
     background-color: var(--colore-active);
   }
+  .card {
+    background-color: var(--colore-navbar);
+    color: var(--colore-active);
+  }
+  .view {
+    color: var(--colore-view);
+    border: solid 2px var(--colore-view);
+    background-color: var(--colore-active);
+  }
+  .view:hover {
+    background-color: var(--colore-view);
+    color: white;
+  }
+  .edit {
+    color: var(--colore-edit);
+    border: solid 2px var(--colore-edit);
+    background-color: var(--colore-active);
+  }
+  .edit:hover {
+    background-color: var(--colore-edit);
+    color: white;
+  }
+  .delete {
+    color: var(--colore-delete);
+    border: solid 2px var(--colore-delete);
+    background-color: var(--colore-active);
+  }
+  .delete:hover {
+    background-color: var(--colore-delete);
+    color: white;
+  }
 }
