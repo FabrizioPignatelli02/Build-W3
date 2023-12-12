@@ -1,7 +1,9 @@
 :host {
-  .main {
-    background-color: var(--colore-active);
-  }
+  display: block;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  background-color: var(--colore-active);
+
   .card {
     background-color: var(--colore-navbar);
     color: var(--colore-active);
