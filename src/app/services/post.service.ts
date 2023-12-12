@@ -33,7 +33,7 @@ export class PostService {
   }
 
   createPost(post: Partial<Post>) {
-    return this.http.post(this.apiUrl, post);
+    return this.http.post(this.apiUrl + 'posts', post);
   }
   updatePost(post: Partial<Post>) {
     return this.http.put(`${this.apiUrl}posts/${post.id}`, post);
