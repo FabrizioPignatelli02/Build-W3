@@ -12,15 +12,15 @@ export class PostService {
   constructor(private http: HttpClient) {}
 
   getAllPosts() {
-    return this.http.get<Post[]>(this.apiUrl);
+    return this.http.get<Post[]>(this.apiUrl + '/posts');
   }
 
-  getPostById(postId: number) {
-    return this.http.get<Post>(`${this.apiUrl}/${postId}`);
+  getPostById(id: number) {
+    return this.http.get<Post>(`${this.apiUrl}/posts/${id}`);
   }
 
   getPostsByUserId(userId: number) {
-    return this.http.get<Post[]>(`${this.apiUrl}?userId=${userId}`);
+    return this.http.get<Post[]>(`${this.apiUrl}/posts/?userId=${userId}`);
   }
 
   createPost(post: Partial<Post>) {
