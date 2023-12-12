@@ -27,7 +27,7 @@ export class PostService {
     return this.http.post(this.apiUrl, post);
   }
   updatePost(post: Partial<Post>) {
-    return this.http.put(this.apiUrl, put);
+    return this.http.put(this.apiUrl, post);
   }
 
   deletePost(postId: number) {
