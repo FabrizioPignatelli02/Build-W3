@@ -25,4 +25,13 @@ export class HomeComponent implements OnInit {
   goToDetails(id: number) {
     console.log('Ciao details');
   }
+
+  deletePost(postId: number) {
+    this.postSrv.deletePost(postId).subscribe(() => {
+      console.log(`Post with id: ${postId} deleted`);
+      this.postSrv
+        .getAllPosts()
+        .subscribe((result) => (this.elencoArticoli = result));
+    });
+  }
 }

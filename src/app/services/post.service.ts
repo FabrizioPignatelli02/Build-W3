@@ -40,6 +40,6 @@ export class PostService {
   }
 
   deletePost(postId: number) {
-    return this.http.delete(`${this.apiUrl}/${postId}`);
+    return this.http.delete(`${this.apiUrl}posts/${postId}`);
   }
 }

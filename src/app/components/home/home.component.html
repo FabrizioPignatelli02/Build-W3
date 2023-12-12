@@ -22,7 +22,11 @@
                 class="btn btn-outline ms-2 edit"
                 >Edit</a
               >
-              <a href="#" class="btn btn-outline ms-2 delete">Delete</a>
+              <a
+                class="btn btn-outline ms-2 delete"
+                (click)="deletePost(post.id)"
+                >Delete</a
+              >
             </ng-container>
           </div>
         </div>
