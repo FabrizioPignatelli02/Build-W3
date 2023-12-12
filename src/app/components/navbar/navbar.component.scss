@@ -14,11 +14,14 @@
         }
       }
       button {
-        background-color: var(--colore-button);
-
-        color: var(--colore-background);
-
+        color: var(--colore-delete);
+        border: solid 2px var(--colore-delete);
+        background-color: var(--colore-active);
         font-size: 0.8em;
+      }
+      button:hover {
+        background-color: var(--colore-delete);
+        color: white;
       }
       .nav-link.active {
         color: var(--colore-active);
