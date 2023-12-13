@@ -12,7 +12,9 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { CreateComponent } from './components/create/create.component';
 import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+
+import { MyProfileComponent } from './components/myprofile/myprofile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,7 @@ import { RegisterComponent } from './auth/register/register.component';
     EditComponent,
     CreateComponent,
     LoginComponent,
-    RegisterComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserModule,

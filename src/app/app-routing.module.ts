@@ -6,7 +6,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { CreateComponent } from './components/create/create.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { MyProfileComponent } from './components/myprofile/myprofile.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,12 +27,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'myprofile',
+    component: MyProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path: 'register',
-    component: RegisterComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '**',

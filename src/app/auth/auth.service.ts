@@ -4,7 +4,7 @@ import { Auth } from './auth';
 
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import { BehaviorSubject, throwError, tap, catchError } from 'rxjs'; // Il BehaviourSubject è un tipo particolare di Observable che richiede un valore iniziale, emette in tempo reale il cambiamento di valore e si desottoscrive DA SOLO immediatamente dopo - L'operatore tap è utilizzato per manipolare il PRIMO valore emesso da una chiamata HTTP
+import { BehaviorSubject, throwError, tap, catchError, Observable } from 'rxjs'; // Il BehaviourSubject è un tipo particolare di Observable che richiede un valore iniziale, emette in tempo reale il cambiamento di valore e si desottoscrive DA SOLO immediatamente dopo - L'operatore tap è utilizzato per manipolare il PRIMO valore emesso da una chiamata HTTP
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
@@ -52,11 +52,23 @@ export class AuthService {
       })
     );
   }
+
+  updateUserInfo(updatedInfo: any, id: number) {
+    return this.http.put(`${this.apiURL}users/${id}`, updatedInfo).pipe(
+      tap(() => {
+        // Aggiorna anche this.user se necessario
+        this.user = { ...this.user, ...updatedInfo };
+      }),
+      catchError(this.errors)
+    );
+  }
+
   logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
+
   private errors(err: any) {
     console.log(err);
     switch (err.error) {
