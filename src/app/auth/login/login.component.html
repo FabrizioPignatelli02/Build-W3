@@ -132,7 +132,7 @@
   </ng-container>
   <ng-template #smallWindow>
     <ng-container *ngIf="bool; else falseCase">
-      <div class="user_forms-login">
+      <div class="mobile-screen">
         <h2 class="forms_title">Login</h2>
         <form class="forms_form" #form="ngForm" (ngSubmit)="login(form)">
           <fieldset class="forms_fieldset">
@@ -183,7 +183,7 @@
       </div>
     </ng-container>
     <ng-template #falseCase>
-      <div class="user_forms-signup">
+      <div class="mobile-screen">
         <h2 class="forms_title">Sign Up</h2>
         <form
           class="forms_form"
