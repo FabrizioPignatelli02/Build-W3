@@ -19,6 +19,8 @@ import { PasswordRecoveryService } from './auth/password-recovery.service';
 
 import { PswRecoveryComponent } from './auth/psw-recovery/psw-recovery.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,7 @@ import { PswRecoveryComponent } from './auth/psw-recovery/psw-recovery.component
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [AuthService, PasswordRecoveryService],
   bootstrap: [AppComponent],
