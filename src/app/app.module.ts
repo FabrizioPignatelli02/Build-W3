@@ -14,7 +14,10 @@ import { CreateComponent } from './components/create/create.component';
 import { LoginComponent } from './auth/login/login.component';
 
 import { MyProfileComponent } from './components/myprofile/myprofile.component';
-import { PasswordRecoveryComponent } from './auth/password-recovery/password-recovery.component';
+
+import { PasswordRecoveryService } from './auth/password-recovery.service';
+
+import { PswRecoveryComponent } from './auth/psw-recovery/psw-recovery.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { PasswordRecoveryComponent } from './auth/password-recovery/password-rec
     CreateComponent,
     LoginComponent,
     MyProfileComponent,
-    PasswordRecoveryComponent,
+
+    PswRecoveryComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { PasswordRecoveryComponent } from './auth/password-recovery/password-rec
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, PasswordRecoveryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

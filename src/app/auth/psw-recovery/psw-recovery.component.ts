@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { PasswordRecoveryService } from '../password-recovery.service';
+import { PasswordRecoveryService } from 'src/app/auth/password-recovery.service';
 
 @Component({
-  selector: 'app-password-recovery',
-  templateUrl: './password-recovery.component.html',
-  styleUrls: ['./password-recovery.component.scss'],
+  selector: 'app-psw-recovery',
+  templateUrl: './psw-recovery.component.html',
+  styleUrls: ['./psw-recovery.component.scss'],
 })
-export class PasswordRecoveryComponent implements OnInit {
+export class PswRecoveryComponent implements OnInit {
   constructor(private srvPassRec: PasswordRecoveryService) {}
 
   async sendEmail() {

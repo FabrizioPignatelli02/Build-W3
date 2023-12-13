@@ -1,5 +1,10 @@
 {
   "name": "build-w3",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
