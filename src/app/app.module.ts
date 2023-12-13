@@ -14,6 +14,7 @@ import { CreateComponent } from './components/create/create.component';
 import { LoginComponent } from './auth/login/login.component';
 
 import { MyProfileComponent } from './components/myprofile/myprofile.component';
+import { PasswordRecoveryComponent } from './auth/password-recovery/password-recovery.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MyProfileComponent } from './components/myprofile/myprofile.component';
     CreateComponent,
     LoginComponent,
     MyProfileComponent,
+    PasswordRecoveryComponent,
   ],
   imports: [
     BrowserModule,
