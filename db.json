@@ -350,7 +350,13 @@
       "postId": 2,
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut",
       "id": 3,
-      "userId":3
+      "userId": 3
+    },
+    {
+      "body": "Adding comments now works!",
+      "userId": 2,
+      "postId": 2,
+      "id": 4
     }
   ]
 }
