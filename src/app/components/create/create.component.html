@@ -17,7 +17,7 @@
       </div>
       <div class="mb-3">
         <label for="body" class="form-label">Body</label>
-        <input
+        <textarea
           type="text"
           class="form-control"
           id="body"
@@ -26,7 +26,8 @@
           [minlength]="20"
           ngModel
           required
-        />
+        >
+        </textarea>
       </div>
 
       <button type="submit" class="btn submit" [disabled]="form.invalid">
