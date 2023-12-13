@@ -1,42 +1,137 @@
 <section class="user">
-  <div class="user_options-container">
-    <div class="user_options-text">
-      <div class="user_options-unregistered">
-        <h2 class="user_unregistered-title">Don't have an account?</h2>
-        <p class="user_unregistered-text">
-          Ci potremmo mettere uno slogan a casaccio, quanto per riempire questo
-          spazio.
-        </p>
-        <button
-          class="user_unregistered-signup bounceRight"
-          id="signup-button"
-          (click)="bounceLeft()"
-        >
-          Sign up
-        </button>
+  <ng-container *ngIf="windowWidth; else smallWindow">
+    <div class="user_options-container">
+      <div class="user_options-text">
+        <div class="user_options-unregistered">
+          <h2 class="user_unregistered-title">Don't have an account?</h2>
+          <p class="user_unregistered-text">
+            Ci potremmo mettere uno slogan a casaccio, quanto per riempire
+            questo spazio.
+          </p>
+          <button
+            class="user_unregistered-signup bounceRight"
+            id="signup-button"
+            (click)="bounceLeft()"
+          >
+            Sign up
+          </button>
+        </div>
+
+        <div class="user_options-registered">
+          <h2 class="user_registered-title">Have an account?</h2>
+          <p class="user_registered-text">
+            Ci potremmo mettere uno slogan a casaccio, quanto per riempire
+            questo spazio.
+          </p>
+          <button
+            class="user_registered-login bounceLeft"
+            id="login-button"
+            (click)="bounceRight()"
+          >
+            Login
+          </button>
+        </div>
       </div>
 
-      <div class="user_options-registered">
-        <h2 class="user_registered-title">Have an account?</h2>
-        <p class="user_registered-text">
-          Ci potremmo mettere uno slogan a casaccio, quanto per riempire questo
-          spazio.
-        </p>
-        <button
-          class="user_registered-login bounceLeft"
-          id="login-button"
-          (click)="bounceRight()"
-        >
-          Login
-        </button>
+      <div
+        class="user_options-forms"
+        id="user_options-forms"
+        [ngClass]="{ bounceLeft: !bool, bounceRight: bool }"
+      >
+        <div class="user_forms-login">
+          <h2 class="forms_title">Login</h2>
+          <form class="forms_form" #form="ngForm" (ngSubmit)="login(form)">
+            <fieldset class="forms_fieldset">
+              <div class="forms_field">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="forms_field-input form-control"
+                  name="email"
+                  ngModel
+                  required
+                  email
+                  autofocus
+                />
+              </div>
+              <div class="forms_field">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="forms_field-input form-control"
+                  name="password"
+                  [minlength]="5"
+                  ngModel
+                  required
+                />
+              </div>
+            </fieldset>
+            <div class="forms_buttons">
+              <button type="button" class="forms_buttons-forgot">
+                Forgot password?
+              </button>
+              <button
+                type="submit"
+                class="btn forms_buttons-action"
+                [disabled]="!form.valid"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="user_forms-signup">
+          <h2 class="forms_title">Sign Up</h2>
+          <form
+            class="forms_form"
+            [formGroup]="registerForm"
+            (ngSubmit)="signUp()"
+          >
+            <fieldset class="forms_fieldset">
+              <div class="forms_field">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  class="forms_field-input form-control"
+                  formControlName="name"
+                  required
+                />
+              </div>
+              <div class="forms_field">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="forms_field-input form-control"
+                  formControlName="email"
+                  required
+                />
+              </div>
+              <div class="forms_field">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="forms_field-input form-control"
+                  formControlName="password"
+                  required
+                />
+              </div>
+            </fieldset>
+            <div class="forms_buttons">
+              <button
+                type="submit"
+                class="btn forms_buttons-action"
+                [disabled]="registerForm.invalid"
+              >
+                Sign-Up
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-
-    <div
-      class="user_options-forms"
-      id="user_options-forms"
-      [ngClass]="{ bounceLeft: !bool, bounceRight: bool }"
-    >
+  </ng-container>
+  <ng-template #smallWindow>
+    <ng-container *ngIf="bool; else falseCase">
       <div class="user_forms-login">
         <h2 class="forms_title">Login</h2>
         <form class="forms_form" #form="ngForm" (ngSubmit)="login(form)">
@@ -78,7 +173,16 @@
             </button>
           </div>
         </form>
+        <button
+          class="user_unregistered-signup bounceRight"
+          id="signup-button"
+          (click)="bounceLeft()"
+        >
+          Sign up
+        </button>
       </div>
+    </ng-container>
+    <ng-template #falseCase>
       <div class="user_forms-signup">
         <h2 class="forms_title">Sign Up</h2>
         <form
@@ -125,7 +229,14 @@
             </button>
           </div>
         </form>
+        <button
+          class="user_registered-login bounceLeft"
+          id="login-button"
+          (click)="bounceRight()"
+        >
+          Login
+        </button>
       </div>
-    </div>
-  </div>
+    </ng-template>
+  </ng-template>
 </section>
