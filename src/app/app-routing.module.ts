@@ -7,6 +7,7 @@ import { CreateComponent } from './components/create/create.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { MyProfileComponent } from './components/myprofile/myprofile.component';
+import { PswRecoveryComponent } from './auth/psw-recovery/psw-recovery.component';
 const routes: Routes = [
   {
     path: '',
@@ -30,6 +31,10 @@ const routes: Routes = [
     path: 'myprofile',
     component: MyProfileComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'recPass',
+    component: PswRecoveryComponent,
   },
   {
     path: 'login',
