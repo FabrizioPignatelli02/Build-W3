@@ -133,7 +133,7 @@
   <ng-template #smallWindow>
     <ng-container *ngIf="bool; else falseCase">
       <div class="mobile-screen">
-        <h2 class="forms_title">Login</h2>
+        <h2 class="forms_title text-center mb-2">Login</h2>
         <form class="forms_form" #form="ngForm" (ngSubmit)="login(form)">
           <fieldset class="forms_fieldset">
             <div class="forms_field">
@@ -161,12 +161,12 @@
             </div>
           </fieldset>
           <div class="forms_buttons">
-            <button type="button" class="forms_buttons-forgot">
+            <button type="button" class="forms_buttons-forgot mt-3">
               Forgot password?
             </button>
             <button
               type="submit"
-              class="btn forms_buttons-action"
+              class="submit-btn user_unregistered-signup"
               [disabled]="!form.valid"
             >
               Login
@@ -178,13 +178,13 @@
           id="signup-button"
           (click)="bounceLeft()"
         >
-          Sign up
+          Or Sign-Up
         </button>
       </div>
     </ng-container>
     <ng-template #falseCase>
       <div class="mobile-screen">
-        <h2 class="forms_title">Sign Up</h2>
+        <h2 class="forms_title text-center mb-2">Sign Up</h2>
         <form
           class="forms_form"
           [formGroup]="registerForm"
@@ -219,22 +219,20 @@
               />
             </div>
           </fieldset>
-          <div class="forms_buttons">
-            <button
-              type="submit"
-              class="btn forms_buttons-action"
-              [disabled]="registerForm.invalid"
-            >
-              Sign-Up
-            </button>
-          </div>
+          <button
+            type="submit"
+            class="submit-btn user_unregistered-signup"
+            [disabled]="registerForm.invalid"
+          >
+            Sign-Up
+          </button>
         </form>
         <button
-          class="user_registered-login bounceLeft"
+          class="user_registered-login bounceLeft bounceLeft-mobile"
           id="login-button"
           (click)="bounceRight()"
         >
-          Login
+          Or Login
         </button>
       </div>
     </ng-template>
