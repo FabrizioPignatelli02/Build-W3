@@ -1,0 +1,121 @@
+:host {
+  section {
+    background-color: var(--colore-active);
+    height: calc(100vh - 4rem);
+    overflow-x: hidden;
+  }
+  .snip1336 {
+    font-family: "Roboto", Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    min-width: 230px;
+    // max-width: 315px;
+    width: 100%;
+    color: var(--colore-active);
+    text-align: left;
+    line-height: 1.4em;
+    background-color: var(--colore-navbar);
+    height: 100%;
+  }
+  .snip1336 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+  .snip1336 img {
+    max-width: 100%;
+    vertical-align: top;
+    opacity: 0.85;
+  }
+  .snip1336 figcaption {
+    width: 100%;
+    background-color: var(--colore-navbar);
+    padding: 25px;
+    position: relative;
+  }
+  .snip1336 figcaption:before {
+    position: absolute;
+    content: "";
+    bottom: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 55px 0 0 400px;
+    border-color: transparent transparent transparent var(--colore-navbar);
+  }
+  .snip1336 figcaption a {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    margin: 10px 0;
+    display: inline-block;
+    opacity: 0.65;
+    width: 47%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .snip1336 figcaption a:hover {
+    opacity: 1;
+  }
+  .snip1336 .profile {
+    position: absolute;
+    bottom: 100%;
+    left: 25px;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .snip1336 .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display: block;
+  }
+
+  .snip1336 h2 {
+    margin: 0 0 5px;
+    font-weight: 300;
+  }
+  .snip1336 p {
+    margin: 0 0 10px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+  .card {
+    background-color: var(--colore-navbar);
+    color: var(--colore-active);
+  }
+  .update-btn {
+    background-color: var(--colore-active);
+    border: solid 2px var(--colore-form);
+  }
+  .update-btn:hover {
+    background-color: var(--colore-form);
+    color: white;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .snip1336 {
+    max-width: 100%;
+    max-height: 500px;
+  }
+  .bg-img {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

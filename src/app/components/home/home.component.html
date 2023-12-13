@@ -30,6 +30,15 @@
             </ng-container>
           </div>
         </div>
+        <div class="card-header">Comments</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let comment of post.comments">
+            <small class="text-body-secondary">
+              {{ comment.user.name }}
+            </small>
+            <p>{{ comment.body }}</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
