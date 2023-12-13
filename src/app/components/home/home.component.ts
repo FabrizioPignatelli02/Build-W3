@@ -28,13 +28,10 @@ export class HomeComponent implements OnInit {
           .getCommentsForPost(post.id)
           .subscribe((comments) => {
             comments.forEach((comment) => {
-              this.userService
-                .getUserById(comment.userId)
-                .subscribe((user) => {
-                  console.log(user)
-                  comment.user = user;
-                  
-                });
+              this.userService.getUserById(comment.userId).subscribe((user) => {
+                console.log(user);
+                comment.user = user;
+              });
             });
 
             post.comments = comments;

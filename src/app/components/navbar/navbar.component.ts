@@ -29,10 +29,9 @@ export class NavbarComponent implements OnInit {
   }
 
   search(event: any) {
-    console.log(
-      this.posts.find((post) =>
-        post.title.toLowerCase().includes(event.target.value)
-      )
+    this.srvPost.postSearch = this.posts.filter((post) =>
+      post.title.toLowerCase().includes(event.target.value)
     );
+    console.log(this.srvPost.postSearch);
   }
 }

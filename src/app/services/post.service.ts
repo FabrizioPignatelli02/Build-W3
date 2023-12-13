@@ -9,6 +9,7 @@ import { Auth } from '../auth/auth';
 })
 export class PostService {
   private readonly apiUrl = environment.apiURl;
+  postSearch!: Post[];
 
   constructor(private http: HttpClient) {}
 
