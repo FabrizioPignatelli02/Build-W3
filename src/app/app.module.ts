@@ -15,6 +15,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 import { MyProfileComponent } from './components/myprofile/myprofile.component';
 import { PasswordRecoveryComponent } from './auth/password-recovery/password-recovery.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PasswordRecoveryComponent } from './auth/password-recovery/password-rec
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
