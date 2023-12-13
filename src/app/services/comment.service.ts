@@ -20,8 +20,8 @@ export class CommentService {
     return this.http.delete(`${this.apiUrl}comments/${commentId}`)
   }
 
-  createComment(comment: PostComment) {
-    return this.http.post(`${this.apiUrl}comments`, comment)
+  createComment(comment:Partial<PostComment>) {
+    return this.http.post<PostComment>(`${this.apiUrl}comments`, comment)
   }
   
 }
