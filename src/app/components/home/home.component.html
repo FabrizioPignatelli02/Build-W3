@@ -32,21 +32,41 @@
         </div>
         <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
           <ngb-panel title="Comments">
-            <ng-template ngbPanelContent>
+            <ng-template ngbPanelContent let-opened="closed">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item" *ngFor="let comment of post.comments">
-                  <small class="text-body-secondary">
+                <li
+                  class="list-group-item"
+                  *ngFor="let comment of post.comments"
+                >
+                  <small class="text-body-secondary" *ngIf="comment.user">
                     {{ comment.user.name }}
                   </small>
                   <p>{{ comment.body }}</p>
                 </li>
               </ul>
-
             </ng-template>
           </ngb-panel>
-
-        </ngb-accordion> 
-        
+        </ngb-accordion>
+        <div class="input-group">
+          <form
+            class="w-auto"
+            #form="ngForm"
+            (ngSubmit)="onSubmit(form, post.id)"
+          >
+            <input
+              type="text"
+              class="form-control"
+              aria-label="With textarea"
+              placeholder="Leave your comment here"
+              id="new-c-{{ post.id }}"
+              name="body"
+              [minlength]="5"
+              ngModel
+              required
+            />
+            <button type="submit" class="btn submit">Send</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
