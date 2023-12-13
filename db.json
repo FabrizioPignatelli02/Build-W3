@@ -25,9 +25,9 @@
       "id": 4
     },
     {
+      "name": "Giuseppe ",
       "email": "gius@triolo.it",
-      "password": "$2a$10$9PWnz7yVZ9YExZq/VNDkluCNXgzzbw1ICOT3dovl2vPifaSXjMrN.",
-      "name": "Giuseppe",
+      "password": "$2a$10$Ac0bTOmxp63neCpFDmP9UeO.zRteUWEpH4itEKg/H0ExuV5Qanz5K",
       "id": 5
     }
   ],
@@ -350,7 +350,7 @@
       "postId": 2,
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut",
       "id": 3,
-      "userId":3
+      "userId": 3
     }
   ]
 }
