@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
         Validators.minLength(5),
       ]),
     });
+    this.checkWindowWidth();
   }
 
   login(form: NgForm) {
