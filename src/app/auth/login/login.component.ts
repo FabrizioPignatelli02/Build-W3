@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   registerForm!: FormGroup;
+  bool: boolean = true;
+  windowWidth!: boolean;
+
+  @HostListener('window:resize', ['event']) onResize(event: Event): void {
+    this.checkWindowWidth();
+  }
 
   constructor(private authSrv: AuthService, private router: Router) {}
+
+  private checkWindowWidth(): void {
+    this.windowWidth = window.innerWidth >= 800;
+  }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -45,8 +56,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/register']);
     }
   }
-
-  bool: boolean = true;
 
   bounceLeft() {
     this.bool = !this.bool;
