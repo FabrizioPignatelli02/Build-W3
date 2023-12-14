@@ -3,4 +3,5 @@ export interface User {
   password: string;
   name: string;
   id: number;
+  poster?: string;
 }

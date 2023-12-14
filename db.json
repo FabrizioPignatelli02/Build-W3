@@ -1,34 +1,39 @@
 {
   "users": [
     {
-      "name": "mirko",
+      "name": "Luca",
       "email": "lucafavaretto@icolud.com",
       "password": "$2a$10$sizJuhX0lpu/jc55b4kDpeDSb3SWN00D.EWdkth1tBsJcSxbWoY9e",
-      "id": 1
+      "id": 1,
+      "poster": "https://images.unsplash.com/photo-1588167056840-13caf6e4562a?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "email": "cate@cate.com",
       "password": "$2a$10$MKqkXu1oR4yjvlK4XCFIiuDTfi9vYRd0r2pwavkGDtXteV/pJ4om6",
       "name": "Caterina",
-      "id": 2
+      "id": 2,
+      "poster": "https://fumettologica.it/wp-content/uploads/2022/05/doctor-strange-multiverso-della-follia.jpg"
     },
     {
       "email": "fabriziopignatelli26@gmail.com",
       "password": "$2a$10$0yj5JiCKTgozJTru9/BLOehppj.EaLJwEw.UmXWAq7Fl/vg2Doufq",
       "name": "Fabrizio Giuseppe Pignatelli",
-      "id": 3
+      "id": 3,
+      "poster": "https://media.licdn.com/dms/image/D4E03AQGAYcxnKY9u3Q/profile-displayphoto-shrink_800_800/0/1696406522532?e=2147483647&v=beta&t=ZuUeOIFQbitmM9X7Q83vtLEONTKBc6BQ-W9MdowIRyM"
     },
     {
       "email": "chiarapuleio@yahoo.it",
       "password": "$2a$10$KvDTRn7ifxsgEzJhGdyEv.onLiSKapIdXZi9ot7rYfjjun4pE9ET2",
       "name": "Chiara",
-      "id": 4
+      "id": 4,
+      "poster": "https://i.etsystatic.com/12235444/r/il/bb2df2/1261010474/il_570xN.1261010474_fi5l.jpg"
     },
     {
       "email": "gius@triolo.it",
       "password": "$2a$10$9PWnz7yVZ9YExZq/VNDkluCNXgzzbw1ICOT3dovl2vPifaSXjMrN.",
       "name": "Giuseppe",
-      "id": 5
+      "id": 5,
+      "poster": "https://www.wallpaperup.com/uploads/wallpapers/2014/02/17/257269/3e97b23b4ff8b4397ab3db796bc86d66.jpg"
     }
   ],
   "posts": [
