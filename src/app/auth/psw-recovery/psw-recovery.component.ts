@@ -14,7 +14,8 @@ export class PswRecoveryComponent implements OnInit {
       await this.srvPassRec.sendEmail(
         'giuseppe.triolo99@gmail.com',
         'password',
-        'hello world'
+        'hello world',
+        '<strong>and easy to do anywhere, even with Node.js</strong>'
       );
       console.log('Email inviata con successo');
     } catch (error) {

@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth.service';
+import { HttpInterceptor } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,6 +21,7 @@ import { PasswordRecoveryService } from './auth/password-recovery.service';
 import { PswRecoveryComponent } from './auth/psw-recovery/psw-recovery.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TokenInterceptor } from './auth/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     NgbModule,
   ],
-  providers: [AuthService, PasswordRecoveryService],
+  providers: [
+    AuthService,
+    PasswordRecoveryService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
