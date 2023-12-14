@@ -38,4 +38,6 @@ export class NavbarComponent implements OnInit {
     );
     console.log(this.srvPost.postSearch);
   }
+
+  btnClass: string = 'open';
 }
