@@ -2,6 +2,11 @@
   > div {
     background-color: var(--colore-navbar);
     nav {
+      form {
+        background-color: VAR(--colore-form);
+        padding: 5px;
+        border-radius: 3px;
+      }
       height: 62px;
       div#navbarNav {
         background-color: var(--colore-navbar);
