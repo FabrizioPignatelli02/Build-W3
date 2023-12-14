@@ -6,6 +6,7 @@ import { CommentService } from 'src/app/services/comment.service';
 import { UserService } from 'src/app/services/user.service';
 import { PostComment } from 'src/app/models/comment';
 import { NgForm } from '@angular/forms';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +30,12 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
       this.userId = this.postSrv.getUserId();
     });
   }
-
+  getUser(id: number) {
+    this.userService.getUserById(id).subscribe((user) => {
+      console.log(user.name);
+      return user.name;
+    });
+  }
   ngDoCheck(): void {
     if (this.postSrv.postSearch) {
       if (this.postSearch !== this.postSrv.postSearch) {
@@ -52,5 +58,4 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
         .subscribe((result) => (this.postSearch = result));
     });
   }
-
 }
