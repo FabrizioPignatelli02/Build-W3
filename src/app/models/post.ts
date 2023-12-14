@@ -7,4 +7,6 @@ export interface Post {
   body: string;
   comments: PostComment[];
   poster?: string;
+  like?: number;
+  views?: number;
 }

@@ -16,7 +16,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { MyProfileComponent } from './components/myprofile/myprofile.component';
 import { PasswordRecoveryComponent } from './auth/password-recovery/password-recovery.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { HorizontalCardComponent } from './components/horizontal-card/horizontal
     LoginComponent,
     MyProfileComponent,
     PasswordRecoveryComponent,
-    HorizontalCardComponent,
   ],
   imports: [
     BrowserModule,
