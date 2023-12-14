@@ -36,7 +36,9 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
       });
     });
   }
-
+  plusLike(like: number, id: number) {
+    this.postSrv.plusLike(like, id).subscribe(() => {});
+  }
   getUser(id: number) {
     this.userService.getUserById(id).subscribe((user) => {
       this.userName = user.name;

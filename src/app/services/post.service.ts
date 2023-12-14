@@ -13,6 +13,12 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
+  plusLike(like: number, id: number) {
+    return this.http.patch<Post>(`${this.apiUrl}posts/${id}/like`, {
+      like: like + 1,
+    });
+  }
+
   getUserId(): number {
     const user = localStorage.getItem('user');
     if (user) {
