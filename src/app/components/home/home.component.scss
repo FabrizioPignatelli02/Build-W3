@@ -35,4 +35,73 @@
     background-color: var(--colore-delete);
     color: white;
   }
+
 }
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  65% {
+    opacity: 0;
+    display: none;
+  }
+  66% {
+    opacity: 0.2;
+    display: block;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  99% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.nascosto{
+  width: 500px;
+  margin-inline: auto;
+  margin-top: 180px;
+  animation: fadeOut 1.5s ease-in forwards;
+  animation-iteration-count: 1;
+}
+
+.div-nascosto{
+  animation: fadeOut 1.5s ease-in forwards;
+  animation-iteration-count: 1;
+}
+
+
+.to-show {
+  animation: fadeIn 2.5s ease-in forwards;
+  animation-iteration-count: 1;
+}
+
+
+@media screen and (max-width: 500px) {
+  .nascosto{
+    width: 200px;
+    margin-inline: auto;
+    margin-top: 180px;
+    animation: fadeOut 1.5s ease-in forwards;
+    animation-iteration-count: 1;
+  }
+}
+
