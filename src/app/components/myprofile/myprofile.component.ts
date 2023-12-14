@@ -23,6 +23,7 @@ export class MyProfileComponent implements OnInit {
     this.userForm = this.fb.group({
       name: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
+      poster: [null, Validators.required],
       password: [null, [Validators.required, Validators.minLength(5)]],
     });
 
@@ -37,6 +38,7 @@ export class MyProfileComponent implements OnInit {
       this.userForm.patchValue({
         name: user.name,
         email: user.email,
+        poster: user.poster,
         password: user.password,
       });
     }

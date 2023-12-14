@@ -28,7 +28,7 @@ export class AuthService {
         // alert('Login effettuato');
         setTimeout(() => {
           this.router.navigate(['/']);
-        }, 1000);
+        }, 500);
       }),
       catchError(this.errors)
     );

@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 import { PostComment } from 'src/app/models/comment';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
+import { AnimationStateService } from 'src/app/services/animation-state.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
   constructor(
     private postSrv: PostService,
     private commentService: CommentService,
-    private userService: UserService
+    private userService: UserService,
+    private animationSrv: AnimationStateService
   ) {}
 
   postSearch: Post[] = [];
@@ -35,6 +37,19 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
         });
       });
     });
+
+    const hasExecuted = this.animationSrv.checkAnimationState();
+    console.log('Animazione:', hasExecuted);
+
+    if (hasExecuted === true) {
+      const logo = document.getElementById('logo') as HTMLImageElement;
+      const main = document.getElementById('main') as HTMLDivElement;
+      main.classList.remove('to-show');
+      logo.classList.remove('nascosto');
+      logo.classList.add('d-none');
+    }
+
+    sessionStorage.setItem('animationExecuted', 'true');
   }
 
   getUser(id: number) {

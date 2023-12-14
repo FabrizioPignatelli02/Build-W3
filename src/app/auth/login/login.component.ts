@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
         audio.load();
         audio.play();
         localStorage.setItem('token', response.accessToken);
+        sessionStorage.setItem('animationExecuted', 'false');
       });
     } catch (error) {
       alert('Login errato!');
