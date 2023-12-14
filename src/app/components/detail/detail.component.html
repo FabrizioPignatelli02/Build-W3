@@ -3,10 +3,47 @@
     <div class="card mb-3">
       <div class="card-header">Post</div>
       <div class="card-body">
-        <h5 class="card-title">{{ titlePost }}</h5>
+        <h5 class="card-title">{{ post.title }}</h5>
         <p class="card-text">
-          {{ bodyPost }}
+          {{ post.body }}
         </p>
+        <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+          <ngb-panel title="Comments">
+            <ng-template ngbPanelContent let-opened="closed">
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item"
+                  *ngFor="let comment of post.comments"
+                >
+                  <small class="text-body-secondary" *ngIf="comment.user">
+                    {{ comment.user.name }}
+                  </small>
+                  <p>{{ comment.body }}</p>
+                </li>
+              </ul>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+        <div class="input-group">
+          <form
+            class="w-auto"
+            #form="ngForm"
+            (ngSubmit)="onSubmit(form, post.id)"
+          >
+            <input
+              type="text"
+              class="form-control"
+              aria-label="With textarea"
+              placeholder="Leave your comment here"
+              id="new-c-{{ post.id }}"
+              name="body"
+              [minlength]="5"
+              ngModel
+              required
+            />
+            <button type="submit" class="btn submit" [disabled]="form.invalid">Send</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

@@ -25,20 +25,6 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
   ngOnInit(): void {
     this.postSrv.getAllPosts().subscribe((result: Post[]) => {
       this.postSearch = result;
-      this.postSearch.forEach((post) => {
-        this.commentService
-          .getCommentsForPost(post.id)
-          .subscribe((comments) => {
-            comments.forEach((comment) => {
-              this.userService.getUserById(comment.userId).subscribe((user) => {
-                console.log(user);
-                comment.user = user;
-              });
-            });
-
-            post.comments = comments;
-          });
-      });
       console.log('Result', this.postSearch[0].userId);
       this.userId = this.postSrv.getUserId();
     });
@@ -67,23 +53,4 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
     });
   }
 
-  onSubmit(form: NgForm, postId: number) {
-    let newComment: Partial<PostComment> = {
-      body: form.value.body,
-      userId: this.userId,
-      postId,
-    };
-
-    this.commentService.createComment(newComment).subscribe((newComment) => {
-      this.userService.getUserById(this.userId).subscribe((user) => {
-        newComment.user = user;
-
-        form.reset();
-
-        this.postSearch
-          .find((post) => post.id === newComment.postId)
-          ?.comments.push(newComment);
-      });
-    });
-  }
 }
