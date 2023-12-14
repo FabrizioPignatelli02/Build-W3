@@ -25,6 +25,10 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    let audio = new Audio();
+    audio.src = '../../assets/audio/farewell-my-friend.mp3';
+    audio.load();
+    audio.play();
     this.srvAuth.logout();
   }
 
