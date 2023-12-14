@@ -20,6 +20,7 @@ export class CreateComponent implements OnInit {
     let post: Partial<Post> = {
       title: forms.value.title,
       body: forms.value.body,
+      poster: forms.value.poster,
       userId: this.user,
     };
     this.srvPost.createPost(post).subscribe(() => {

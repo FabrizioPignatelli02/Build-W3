@@ -14,6 +14,17 @@
           [(ngModel)]="post.title"
           required
         />
+        <label for="title" class="form-label">Poster</label>
+        <input
+          type="poster"
+          class="form-control"
+          id="poster"
+          aria-describedby="poster link"
+          name="poster"
+          placeholder="{{ post.poster }}"
+          [(ngModel)]="post.poster"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="body" class="form-label">Body</label>

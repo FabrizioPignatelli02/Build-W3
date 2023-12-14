@@ -6,6 +6,7 @@ import { CommentService } from 'src/app/services/comment.service';
 import { UserService } from 'src/app/services/user.service';
 import { PostComment } from 'src/app/models/comment';
 import { NgForm } from '@angular/forms';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-home',
@@ -21,29 +22,26 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
 
   postSearch: Post[] = [];
   userId!: number;
+  userName!: string;
 
   ngOnInit(): void {
     this.postSrv.getAllPosts().subscribe((result: Post[]) => {
       this.postSearch = result;
-      this.postSearch.forEach((post) => {
-        this.commentService
-          .getCommentsForPost(post.id)
-          .subscribe((comments) => {
-            comments.forEach((comment) => {
-              this.userService.getUserById(comment.userId).subscribe((user) => {
-                console.log(user);
-                comment.user = user;
-              });
-            });
-
-            post.comments = comments;
-          });
-      });
       console.log('Result', this.postSearch[0].userId);
       this.userId = this.postSrv.getUserId();
+      this.postSearch.forEach((post) => {
+        this.userService.getUserById(post.userId).subscribe((user) => {
+          post.user = user;
+        });
+      });
     });
   }
 
+  getUser(id: number) {
+    this.userService.getUserById(id).subscribe((user) => {
+      this.userName = user.name;
+    });
+  }
   ngDoCheck(): void {
     if (this.postSrv.postSearch) {
       if (this.postSearch !== this.postSrv.postSearch) {
@@ -64,26 +62,6 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
       this.postSrv
         .getAllPosts()
         .subscribe((result) => (this.postSearch = result));
-    });
-  }
-
-  onSubmit(form: NgForm, postId: number) {
-    let newComment: Partial<PostComment> = {
-      body: form.value.body,
-      userId: this.userId,
-      postId,
-    };
-
-    this.commentService.createComment(newComment).subscribe((newComment) => {
-      this.userService.getUserById(this.userId).subscribe((user) => {
-        newComment.user = user;
-
-        form.reset();
-
-        this.postSearch
-          .find((post) => post.id === newComment.postId)
-          ?.comments.push(newComment);
-      });
     });
   }
 }
