@@ -18,8 +18,8 @@
               <p class="card-text">
                 {{ post.body }}
               </p>
-              <p class="card-text">
-                {{ post.userId }}
+              <p class="card-text" *ngIf="post.user">
+                {{ post.user.name }}
               </p>
               <div class="d-flex justify-content-between">
                 <div>
