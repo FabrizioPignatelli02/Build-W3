@@ -7,7 +7,7 @@ import { Post } from 'src/app/models/post';
   styleUrls: ['./horizontal-card.component.scss'],
 })
 export class HorizontalCardComponent implements OnInit {
-  // @Input() parentVariable: Post[];
+  @Input() parentVariable: Post = {} as Post;
   constructor() {}
 
   ngOnInit(): void {}
