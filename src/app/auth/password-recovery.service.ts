@@ -6,9 +6,7 @@ import * as sgMail from '@sendgrid/mail';
 })
 export class PasswordRecoveryService {
   constructor() {
-    sgMail.setApiKey(
-      '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'
-    );
+    sgMail.setApiKey('d-0b26dc011aa84821a949c54ae458ff52');
   }
 
   sendEmail(to: string, subject: string, text: string) {
