@@ -22,18 +22,24 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
 
   postSearch: Post[] = [];
   userId!: number;
+  userName!: string;
 
   ngOnInit(): void {
     this.postSrv.getAllPosts().subscribe((result: Post[]) => {
       this.postSearch = result;
       console.log('Result', this.postSearch[0].userId);
       this.userId = this.postSrv.getUserId();
+      this.postSearch.forEach((post) => {
+        this.userService.getUserById(post.userId).subscribe((user) => {
+          post.user = user;
+        });
+      });
     });
   }
+
   getUser(id: number) {
     this.userService.getUserById(id).subscribe((user) => {
-      console.log(user.name);
-      return user.name;
+      this.userName = user.name;
     });
   }
   ngDoCheck(): void {

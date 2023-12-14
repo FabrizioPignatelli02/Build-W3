@@ -9,4 +9,7 @@ export interface Post {
   poster?: string;
   like?: number;
   views?: number;
+  user: {
+    name: string;
+  };
 }
