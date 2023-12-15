@@ -321,8 +321,8 @@ input {
 }
 
 .mobile-screen {
-  background-color: var(--colore-li-snavbar);
-  color: var(--colore-navbar);
+  background-color: var(--colore-navbar);
+  color: var(--colore-active);
   padding: 5em;
   border-radius: 10px;
   button {
@@ -330,16 +330,24 @@ input {
   }
   input {
     border-bottom: solid 1px var(--colore-form);
+    color: var(--colore-active);
+    background-color: var(--colore-navbar);
+  }
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder,
+  input[type="text"]::placeholder {
+    color: var(--colore-active);
   }
   .submit-btn {
     background-color: var(--colore-form);
     color: var(--colore-li-snavbar);
     display: block;
-    border-radius: 10px;
+    border-radius: 3px;
     margin-inline: auto;
     margin-top: 1.5em;
   }
-  .bounceLeft-mobile {
+  .bounceLeft-mobile,
+  .forms_buttons-forgot {
     display: block;
     margin-inline: auto;
   }

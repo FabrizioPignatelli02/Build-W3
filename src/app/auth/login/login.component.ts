@@ -39,7 +39,12 @@ export class LoginComponent implements OnInit {
   login(form: NgForm) {
     try {
       this.authSrv.login(form.value).subscribe((response) => {
+        let audio = new Audio();
+        audio.src = '../../assets/audio/opera-gx.mp3';
+        audio.load();
+        audio.play();
         localStorage.setItem('token', response.accessToken);
+        sessionStorage.setItem('animationExecuted', 'false');
       });
     } catch (error) {
       alert('Login errato!');

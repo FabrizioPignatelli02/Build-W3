@@ -25,8 +25,10 @@ export class AuthService {
         this.authSubj.next(dataLogin);
         this.user = dataLogin;
         localStorage.setItem('user', JSON.stringify(dataLogin));
-        alert('Login effettuato');
-        this.router.navigate(['/']);
+        // alert('Login effettuato');
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 500);
       }),
       catchError(this.errors)
     );
@@ -71,6 +73,11 @@ export class AuthService {
 
   private errors(err: any) {
     console.log(err);
+    let audio = new Audio();
+    audio.src = '../../assets/audio/non-puo-entrareh.mp3';
+    audio.load();
+    audio.play();
+    alert('Email o password errata');
     switch (err.error) {
       case 'Email already exists':
         return throwError('Email già registrata');

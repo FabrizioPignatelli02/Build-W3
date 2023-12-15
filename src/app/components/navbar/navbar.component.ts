@@ -25,6 +25,11 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    let audio = new Audio();
+    audio.src = '../../assets/audio/farewell-my-friend.mp3';
+    audio.load();
+    audio.play();
+    sessionStorage.setItem('animationExecuted', 'false');
     this.srvAuth.logout();
   }
 
@@ -34,4 +39,6 @@ export class NavbarComponent implements OnInit {
     );
     console.log(this.srvPost.postSearch);
   }
+
+  btnClass: string = 'open';
 }

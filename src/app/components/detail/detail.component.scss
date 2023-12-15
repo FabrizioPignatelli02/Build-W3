@@ -6,16 +6,37 @@
     background-size: cover;
     position: relative;
   }
-  .container {
-    width: 70vh;
-  }
   .card {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
     background-color: var(--colore-navbar);
     color: var(--colore-active);
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+  }
+  .comment {
+    background-color: var(--colore-li-snavbar);
+    color: var(--colore-form);
+  }
+  .submit {
+    background-color: transparent;
+    border: solid 2px var(--colore-form);
+    color: var(--colore-form);
+  }
+  .submit:hover {
+    background-color: var(--colore-form);
+    color: white;
+  }
+  input {
+    border: solid 1px var(--colore-form);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
   }
 }

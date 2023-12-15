@@ -23,6 +23,7 @@ export class MyProfileComponent implements OnInit {
     this.userForm = this.fb.group({
       name: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
+      poster: [null, Validators.required],
       password: [null, [Validators.required, Validators.minLength(5)]],
     });
 
@@ -37,6 +38,7 @@ export class MyProfileComponent implements OnInit {
       this.userForm.patchValue({
         name: user.name,
         email: user.email,
+        poster: user.poster,
         password: user.password,
       });
     }
@@ -46,17 +48,14 @@ export class MyProfileComponent implements OnInit {
     const formData = this.userForm.value;
 
     if (this.user) {
-      this.authService.updateUserInfo(formData, this.user.id).subscribe(
-        () => {
-          console.log('Informazioni utente aggiornate con successo!');
-        },
-        (error) => {
+      this.authService.updateUserInfo(formData, this.user.id).subscribe({
+        next: () => console.log('Informazioni utente aggiornate con successo!'),
+        error: (err) =>
           console.error(
             "Errore durante l'aggiornamento delle informazioni utente:",
-            error
-          );
-        }
-      );
+            err
+          ),
+      });
     } else {
       console.error('Errore: this.user non è definito.');
     }

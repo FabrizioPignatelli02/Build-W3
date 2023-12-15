@@ -4,6 +4,6 @@ export interface PostComment {
   postId: number;
   userId: number;
   user: {
-    name: string
-  }
+    name: string;
+  };
 }
