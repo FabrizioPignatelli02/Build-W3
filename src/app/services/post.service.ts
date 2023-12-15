@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Post } from '../models/post';
 import { Auth } from '../auth/auth';
+import { catchError, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,24 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
+  plusLike(id: number, post: Post) {
+    let like: number = post.like++;
+    return this.http.put<Post>(`${this.apiUrl}posts/${id}`, post).pipe(
+      tap(() => {
+        post = { ...post, like: like };
+      })
+    );
+  }
+
+  plusView(id: number, post: Post) {
+    let view: number = post.views++;
+    return this.http.put<Post>(`${this.apiUrl}posts/${id}`, post).pipe(
+      tap(() => {
+        post = { ...post, views: view };
+      })
+    );
+  }
+
   getUserId(): number {
     const user = localStorage.getItem('user');
     if (user) {
@@ -21,6 +40,7 @@ export class PostService {
     }
     return 0;
   }
+
   getUser() {
     const user = localStorage.getItem('user');
     if (user) {
