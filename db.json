@@ -29,10 +29,9 @@
       "poster": "https://i.etsystatic.com/12235444/r/il/bb2df2/1261010474/il_570xN.1261010474_fi5l.jpg"
     },
     {
-      "name": "Giuseppe ",
+      "name": "Giuseppe",
       "email": "gius@triolo.it",
       "password": "$2a$10$9PWnz7yVZ9YExZq/VNDkluCNXgzzbw1ICOT3dovl2vPifaSXjMrN.",
-      "name": "Giuseppe",
       "id": 5,
       "poster": "https://www.wallpaperup.com/uploads/wallpapers/2014/02/17/257269/3e97b23b4ff8b4397ab3db796bc86d66.jpg"
     }
@@ -44,8 +43,8 @@
       "title": "qui est esse",
       "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
       "poster": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "like": 9000,
-      "views": 14000,
+      "like": 9005,
+      "views": 14001,
       "user": {
         "name": "Luca",
         "email": "lucafavaretto@icolud.com",
@@ -235,7 +234,14 @@
       "body": "qui consequuntur ducimus possimus quisquam amet similique\nsuscipit porro ipsam amet\neos veritatis officiis exercitationem vel fugit aut necessitatibus totam\nomnis rerum consequatur expedita quidem cumque explicabo",
       "poster": "https://images.unsplash.com/photo-1607408315966-a507deb53589?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "like": 0,
-      "views": 0
+      "views": 1,
+      "user": {
+        "email": "cate@cate.com",
+        "password": "$2a$10$MKqkXu1oR4yjvlK4XCFIiuDTfi9vYRd0r2pwavkGDtXteV/pJ4om6",
+        "name": "Caterina",
+        "id": 2,
+        "poster": "https://fumettologica.it/wp-content/uploads/2022/05/doctor-strange-multiverso-della-follia.jpg"
+      }
     },
     {
       "userId": 3,
@@ -512,9 +518,25 @@
       "body": "1111111111111111111111111111",
       "userId": 1,
       "id": 101,
-      "poster": "https://images.unsplash.com/photo-1572061486732-b528a9b293a3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "like": 0,
-      "views": 0
+      "poster": "https://images.unsplash.com/photo-1504036764568-17ae585d4619?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 0,
+      "like": 0
+    },
+    {
+      "title": "222222sdsdv",
+      "body": "ndkvbzsdk sdb kvbks d szmnd f sd vsazd v zsdv zs dv zsd v zsdv zs dv",
+      "poster": "https://images.unsplash.com/photo-1702540122576-dd7d387f652f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "userId": 1,
+      "views": 1,
+      "like": 1,
+      "id": 102,
+      "user": {
+        "name": "Luca",
+        "email": "lucafavaretto@icolud.com",
+        "password": "$2a$10$sizJuhX0lpu/jc55b4kDpeDSb3SWN00D.EWdkth1tBsJcSxbWoY9e",
+        "id": 1,
+        "poster": "https://images.unsplash.com/photo-1588167056840-13caf6e4562a?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
     }
   ],
   "comments": [

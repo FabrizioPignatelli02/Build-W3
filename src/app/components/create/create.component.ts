@@ -22,6 +22,8 @@ export class CreateComponent implements OnInit {
       body: forms.value.body,
       poster: forms.value.poster,
       userId: this.user,
+      views: 0,
+      like: 0,
     };
     this.srvPost.createPost(post).subscribe(() => {
       this.router.navigate(['/']);

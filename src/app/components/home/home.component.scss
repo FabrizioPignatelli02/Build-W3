@@ -35,10 +35,7 @@
     background-color: var(--colore-delete);
     color: white;
   }
-
 }
-
-
 
 @keyframes fadeIn {
   0% {
@@ -59,7 +56,6 @@
   }
 }
 
-
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -75,7 +71,7 @@
   }
 }
 
-.nascosto{
+.nascosto {
   width: 500px;
   margin-inline: auto;
   margin-top: 180px;
@@ -83,20 +79,18 @@
   animation-iteration-count: 1;
 }
 
-.div-nascosto{
+.div-nascosto {
   animation: fadeOut 1.5s ease-in forwards;
   animation-iteration-count: 1;
 }
-
 
 .to-show {
   animation: fadeIn 2.5s ease-in forwards;
   animation-iteration-count: 1;
 }
 
-
 @media screen and (max-width: 500px) {
-  .nascosto{
+  .nascosto {
     width: 200px;
     margin-inline: auto;
     margin-top: 180px;
@@ -104,4 +98,3 @@
     animation-iteration-count: 1;
   }
 }
-
