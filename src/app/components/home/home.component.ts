@@ -51,13 +51,14 @@ export class HomeComponent implements OnInit, DoCheck, AfterContentInit {
 
     sessionStorage.setItem('animationExecuted', 'true');
   }
-  plusLike(like: number, id: number) {
-    this.postSrv.plusLike(like, id).subscribe(() => {});
+  plusLike(id: number, post: Post) {
+    this.postSrv.plusLike(id, post).subscribe(() => {});
+  }
+  plusView(id: number, post: Post) {
+    this.postSrv.plusView(id, post).subscribe(() => {});
   }
   getUser(id: number) {
-    this.userService.getUserById(id).subscribe((user) => {
-      this.userName = user.name;
-    });
+    this.userService.getUserById(id).subscribe((user) => {});
   }
   ngDoCheck(): void {
     if (this.postSrv.postSearch) {
